@@ -1,18 +1,15 @@
----
-title: "Simple document"
-author: Fang Wang
-date: 2024-9-10
-output: github_document
----
+Simple document
+================
+Fang Wang
+2024-9-10
 
-I'm an R Markdown document! 
+I’m an R Markdown document!
 
 # Section 1
 
-Here's a **code chunk** that samples from 
-a _normal distribution_:
+Here’s a **code chunk** that samples from a *normal distribution*:
 
-```{r}
+``` r
 ## eval = FALSE: code will be displayed but not executed; results are not included.
 ## echo = FALSE: code will be executed but not displayed; results are included.
 ## include = FALSE: code won’t be executed or displayed.
@@ -24,21 +21,19 @@ samp = rnorm(100)
 length(samp)
 ```
 
+    ## [1] 100
+
 # Section 2
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+I can take the mean of the sample, too! The mean is -0.0205672.
 
 # Section 3: learning assessement
- This is code for the learning assessment at P8105. 
- 
-```{r library, echo=FALSE, message=FALSE} 
-# 
-library(tidyverse)
-```
-I loaded necessary package "tidyverse"
 
-```{r learning assessment}
+This is code for the learning assessment at P8105.
+
+I loaded necessary package “tidyverse”
+
+``` r
 la_df =
   tibble(
     norm_samp = rnorm(n=500, mean=1),
@@ -48,28 +43,25 @@ la_df =
 
 ggplot(la_df, aes(x=abs_v_samp))+
          geom_histogram()
-
 ```
- 
- 
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](template_files/figure-gfm/learning%20assessment-1.png)<!-- -->
+
 Here is code to create a histogram.
- 
-```{r, eval=FALSE, eco=FALSE}
+
+``` r
 ggplot(la_df, aes(x=abs_v_samp))+
          geom_histogram()
 ```
- 
- 
+
 # Section 4: Formating text
 
-*italic*  or  _italic_
-**bold**  or  __bold__
-`code`
-superscript^2^ and subscript~2~
+*italic* or *italic* **bold** or **bold** `code` superscript<sup>2</sup>
+and subscript<sub>2</sub>
 
-
-Headings
-------------------------------------------------------------
+## Headings
 
 # 1st Level Header
 
@@ -77,28 +69,23 @@ Headings
 
 ### 3rd Level Header
 
+## Lists
 
-Lists
-------------------------------------------------------------
+- Bulleted list item 1
 
-*   Bulleted list item 1
+- Item 2
 
-*   Item 2
+  - Item 2a
 
-    * Item 2a
-
-    * Item 2b
+  - Item 2b
 
 1.  Numbered list item 1
 
-1.  Item 2. The numbers are incremented automatically in the output.
+2.  Item 2. The numbers are incremented automatically in the output.
 
+## Tables
 
-Tables 
-------------------------------------------------------------
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
- 
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
